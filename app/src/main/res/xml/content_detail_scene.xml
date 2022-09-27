@@ -22,6 +22,7 @@
             app:layout_constraintTop_toBottomOf="@id/file_name_container"/>
     </ConstraintSet>
 
+
     <Transition
         app:constraintSetEnd="@id/end"
         app:constraintSetStart="@+id/start"
