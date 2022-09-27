@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@id/status_container"
+            android:alpha="0.0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@id/status_container"
+            android:alpha="1.0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/file_name_container"
+            app:layout_constraintTop_toBottomOf="@id/file_name_container"/>
+    </ConstraintSet>
+
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@+id/start"
+        app:duration="2000"
+        app:autoTransition="animateToEnd">
+        <KeyFrameSet>
+            <KeyAttribute
+                app:framePosition="50"
+                app:motionTarget="@string/status"
+                android:scaleY="2.0"
+                android:scaleX="2.0" />
+        </KeyFrameSet>
+    </Transition>
+</MotionScene>
